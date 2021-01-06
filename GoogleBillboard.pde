@@ -3,6 +3,7 @@ public void setup()
 {            
   String digits;
   double dNum;
+    System.out.println("First 10 digit prime number in e is");
     for(int i = 2; i < e.length() - 10; i++){
       digits = e.substring(i, i + 10);
       dNum = Double.parseDouble(digits);
@@ -11,6 +12,25 @@ public void setup()
         break;
       }
     }
+    //
+    System.out.println("PART 2");
+    int[] array = new int[10];
+    int counter = 0;
+    for(int b = 2; b < e.length(); b++){
+      int sum = 0;
+    for(int a = 0; a < 10; a++){
+      if(counter == 5){
+        break;
+      }
+      array[a] = Integer.parseInt(e.substring((a + b), (a + b) + 1));
+      sum = sum + array[a];
+    }
+    if(sum == 49){
+      System.out.println(e.substring(b, b+10));
+      counter = counter + 1;
+    } 
+    }
+    System.out.print(" is the 5th 10-digit sequence whose digits add up to 49.");
 }  
 public void draw()  
 {   
